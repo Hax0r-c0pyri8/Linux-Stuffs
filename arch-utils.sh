@@ -14,7 +14,7 @@ fi
 echo -e "${BLUE}[+] Running lean install sequence...${NC}"
 
 # Core utilities
-sudo pacman -Syu --needed --noconfirm git curl wget btop fastfetch cool-retro-term kio-admin ark p7zip unrar unzip zip tar lzop cpio vlc ffmpeg aom libde265 libheif steam
+sudo pacman -Syu --needed --noconfirm git curl wget btop fastfetch cool-retro-term kio-admin ark p7zip unrar unzip zip tar lzop cpio vlc ffmpeg aom libde265 libheif
 
 # Yay AUR helper
 if ! command -v yay &> /dev/null; then
@@ -33,7 +33,7 @@ fi
 # Verification
 echo -e "${BLUE}[+] Verifying installation stack...${NC}"
 FAILED=()
-for pkg in git curl wget btop fastfetch cool-retro-term kio-admin ark p7zip unrar unzip zip tar lzop cpio vlc steam signal-desktop spotify notepadqq google-chrome caido-bin; do
+for pkg in git curl wget btop fastfetch cool-retro-term kio-admin ark p7zip unrar unzip zip tar lzop cpio vlc  signal-desktop spotify notepadqq google-chrome caido-bin; do
     base=$(echo "$pkg" | sed 's/-bin//')
     if ! pacman -Q "$pkg" &> /dev/null && ! pacman -Q "$base" &> /dev/null && ! command -v "$pkg" &> /dev/null; then
         FAILED+=("$pkg")
